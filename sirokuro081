@@ -131,3 +131,15 @@ def my_AI(board, color): #おチビちゃんAI
     if put_and_reverse(board, position, color):
       return position
   return 0 
+
+def miyu_AI(board, color):
+  point = [20,-10,5,5,-10,21,-10,-5,-2,-2,-5,-10,8,-2,0,0,-2,9,8,-2,0,0,-1,9,-9,-5,-1,-1,-5,-9,22,-9,10,10,-9,23]
+  arr=[]
+  for pos, val in enumerate(point):
+    arr.append([val,pos])
+  arr.sort(reverse=True)
+  for i in range(len(arr)):
+    position = arr[i][1]
+    if put_and_reverse(board[:], position, color):
+      return position
+  return 0
